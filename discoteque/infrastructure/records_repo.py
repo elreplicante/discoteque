@@ -1,6 +1,8 @@
 class RecordsRepository:
-    def __init__(self):
-        self._records = []
+    _records = []
 
     def find_all(self):
         return self._records
+
+    def save(self, record):
+        self._records.append(record)

@@ -15,8 +15,7 @@ def root():
 
 @app.route('/record', methods=['POST'])
 def add_record():
-    result = RetrieveRecords(RecordsRepository()).execute()
-    return jsonify(result), status.HTTP_201_CREATED
+    return jsonify({}), status.HTTP_201_CREATED
 
 
 if __name__ == '__main__':

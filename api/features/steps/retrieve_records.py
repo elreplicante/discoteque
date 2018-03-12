@@ -21,9 +21,9 @@ def step_see_nothing(context):
     expect(context.response.status_code).to(equal(HTTPStatus.OK))
     expect(json.loads(context.response.data)).to(equal([]))
 
-@given(u'There are some records in my studio')
+@given(u'There are some records in my discoteque')
 def step_impl(context):
-    context.response = context.client.post('/record', data={
+    context.client.post('/record', data={
         'name': 'Challenger',
         'artist': 'Baby\'s Gang',
         'label': 'ZYX',
@@ -33,5 +33,6 @@ def step_impl(context):
 
 @then(u'I see the records')
 def step_impl(context):
+    response = json.loads(context.response.data)
+    expect(response).to(have_len(1))
     expect(context.response.status_code).to(equal(201))
-    expect(json.loads(context.response.data)).to(equal([]))
