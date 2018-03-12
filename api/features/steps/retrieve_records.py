@@ -19,20 +19,17 @@ def step_see_record_list(context):
 @then(u'I see nothing')
 def step_see_nothing(context):
     expect(context.response.status_code).to(equal(HTTPStatus.OK))
-    expect(json.loads(context.response.data)).to(equal([]))
+    expect(json.loads(context.response.data)).to(be_empty)
 
 @given(u'There are some records in my discoteque')
 def step_impl(context):
     context.client.post('/record', data={
         'name': 'Challenger',
-        'artist': 'Baby\'s Gang',
-        'label': 'ZYX',
-        'genre': 'Italo'
+        'artist': 'Baby\'s Gang'
     }, follow_redirects=True)
 
 
 @then(u'I see the records')
 def step_impl(context):
     response = json.loads(context.response.data)
-    expect(response).to(have_len(1))
-    expect(context.response.status_code).to(equal(201))
+    expect(response).to_not(be_empty)
