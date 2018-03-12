@@ -13,7 +13,6 @@ with description(AddRecord):
             self.records_repo = Mock(RecordsRepository)
             self.record_service = Spy(RecordService(self.records_repo))
 
-
         with it('calls the repo to save the record'):
             action = AddRecord(self.record_service)
 
