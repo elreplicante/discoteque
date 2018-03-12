@@ -31,5 +31,6 @@ def step_impl(context):
 
 @then(u'I see the records')
 def step_impl(context):
-    response = json.loads(context.response.data)
-    expect(response).to_not(be_empty)
+    response = context.client.get('/records')
+
+    expect(json.loads(response.data)).to_not(be_empty)

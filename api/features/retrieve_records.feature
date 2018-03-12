@@ -1,4 +1,4 @@
-Feature: Retrieve Records
+Feature: List all records
   Scenario: No records on the discoteque
     Given I lost all my records
     When I see my records list
