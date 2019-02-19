@@ -2,10 +2,9 @@ from mamba import description, it
 from expects import *
 from doublex import Stub
 
-from discoteque.actions.retrieve_records import RetrieveRecords
-from discoteque.domain.records.record import Record
-from discoteque.infrastructure.records_repo import RecordsRepository
-
+from app.discoteque.actions.retrieve_records import RetrieveRecords
+from app.discoteque.domain.records.record import Record
+from app.discoteque.infrastructure.records_repo import RecordsRepository
 
 with description(RetrieveRecords):
     with before.each:

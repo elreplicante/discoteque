@@ -2,10 +2,10 @@ from flask import Flask
 from flask import jsonify, request
 from flask_api import status
 
-from discoteque.actions.retrieve_records import RetrieveRecords
-from discoteque.actions.add_record import AddRecord
-from discoteque.domain.records.record_service import RecordService
-from discoteque.infrastructure.records_repo import RecordsRepository
+from app.discoteque import RetrieveRecords
+from app.discoteque.actions.add_record import AddRecord
+from app.discoteque.domain.records import RecordService
+from app.discoteque import RecordsRepository
 
 app = Flask(__name__)
 

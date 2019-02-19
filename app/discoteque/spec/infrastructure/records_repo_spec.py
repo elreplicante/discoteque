@@ -1,10 +1,8 @@
 from mamba import description, it
 from expects import *
-from doublex_expects import *
 
-from discoteque.infrastructure.records_repo import RecordsRepository
-from discoteque.domain.records.record import Record
-
+from app.discoteque.domain.records.record import Record
+from app.discoteque.infrastructure.records_repo import RecordsRepository
 
 with description(RecordsRepository):
     with description('Add records'):

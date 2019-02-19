@@ -1,12 +1,9 @@
 from mamba import description, it
-from expects import *
-from doublex import Spy, Mock, assert_that, called
-from doublex_expects import *
+from doublex import Spy, assert_that, called
 
-from discoteque.infrastructure.records_repo import RecordsRepository
-from discoteque.domain.records.record_service import RecordService
-from discoteque.domain.records.record import Record
-
+from app.discoteque.domain.records.record import Record
+from app.discoteque.domain.records.record_service import RecordService
+from app.discoteque.infrastructure.records_repo import RecordsRepository
 
 with description(RecordService):
     with description('Add records'):

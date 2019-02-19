@@ -1,4 +1,4 @@
-from discoteque.domain.records.record import Record
+from app.discoteque.domain.records.record import Record
 
 
 class AddRecord:
