@@ -3,8 +3,6 @@ from http import HTTPStatus
 
 from expects import *
 
-from api.app import app
-
 
 @given(u'I lost all my records')
 def step_lost_all_records(context):

@@ -31,6 +31,6 @@ There are two main levels of testing here.  Acceptance tests are written with Be
 From the root folder:
 
 - Domain tests `mamba app/discoteque/`
-- Acceptance tests: PENDING
+- Acceptance tests: `behave app/api/features`
 
 

@@ -1,11 +1,10 @@
 from flask import Flask
 from flask import jsonify, request
-from flask_api import status
 
-from app.discoteque import RetrieveRecords
 from app.discoteque.actions.add_record import AddRecord
-from app.discoteque.domain.records import RecordService
-from app.discoteque import RecordsRepository
+from app.discoteque.actions.retrieve_records import RetrieveRecords
+from app.discoteque.domain.records.record_service import RecordService
+from app.discoteque.infrastructure.records_repo import RecordsRepository
 
 app = Flask(__name__)
 
@@ -17,13 +16,14 @@ def root():
 
     return jsonify(result)
 
+
 @app.route('/record', methods=['POST'])
 def add_record():
     record_service = RecordService(RecordsRepository())
     action = AddRecord(record_service)
     result = action.execute(request.args)
 
-    return jsonify(result), status.HTTP_201_CREATED
+    return jsonify(result), 201
 
 
 if __name__ == '__main__':
