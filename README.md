@@ -28,8 +28,9 @@ Inside `discoteque` is where domain assumes the business rules decoupled from th
 There are two main levels of testing here.  Acceptance tests are written with Behave and perform requests over the Flask API.  Domain tests are written in Mamba inside the `discoteque/spec` folder.
 
 ### Running the suite
+From the root folder:
 
-- Domain tests `mamba discoteque/`
+- Domain tests `mamba app/discoteque/`
 - Acceptance tests: PENDING
 
 
